@@ -37,25 +37,26 @@ function App() {
 
   return (
     <>
-      <div className="bg-purple-900 p-2 min-h-screen flex justify-center items-center">
-        <div className="max-w-[500px] w-[90%] bg-slate-900 p-4 rounded-2xl shadow-md">
-          <h1 className="text-center text-white text-2xl">Todos for the day</h1>
+      <div className="p-2 min-h-screen flex justify-center items-center" style={{ backgroundColor: '#A28089' }}>
+
+        <div className="max-w-[500px] w-[90%] p-4 rounded-2xl shadow-md" style={{ backgroundColor: '#51e2f5' }}>
+          <h1 className="text-center text-2xl  hover:text-white">Todos for the day</h1>
           <div className="flex gap-2 justify-center my-8">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
               placeholder="Add Todo"
-              className="flex-[3] border-2 outline-none border-gray-500 p-2 text-white placeholder-gray-500 rounded-3xl focus:border-white"
+              className="flex-[3] border-2 outline-none border-gray-600 p-2  placeholder-gray-500 rounded-3xl focus:border-white"
             />
             <button
               onClick={addTodo}
-              className="flex-[0.5] bg-purple-800 cursor-pointer border-gray-500 border-2 rounded-3xl p-1 hover:bg-purple-900 text-white"
+              className="flex-[0.5] cursor-pointer border-gray-600 border-2 rounded-3xl p-1 bg-[#A28089] hover:bg-[#9df9ef] text-white hover:text-black" 
             >
               Add
             </button>
           </div>
-          <h1 className="text-center text-white text-xl font-bold">Todos</h1>
+          <h1 className="text-center text-xl font-bold hover:text-white">Todos</h1>
           {todo.map((todos) => {
             return (
              <Todo key={todos.id} todos={todos} completeTodo={completeTodo} deleteTodo={deleteTodo} />
